@@ -33,4 +33,4 @@ app.get("/", (req,res)=>{
 mongoose.connect(config.database_url!)
   .then(() => console.log("Connected to database"))
   .catch(console.error);
-  export default app;
+export default app;
