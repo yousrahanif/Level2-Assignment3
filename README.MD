@@ -1,45 +1,46 @@
 # Library Management System API
 
-A simple REST API for managing books and borrowing using Express.js and MongoDB (Mongoose)
+A simple REST API for managing books and borrowing, built with Express.js and MongoDB (Mongoose).
+
+---
 
 ## Setup
 
-1. Clone the repo  
-   `https://github.com/yousrahanif/Level2-Assignment3.git`  
-   `cd Assignment3`
+1. **Clone the repo**  
+   git clone https://github.com/yousrahanif/Level2-Assignment3.git
+   cd Assignment3
 
-2. Install dependencies  
-   `npm install`
+2. **Install dependencies**
 
-3. Create a `.env` file with: 
+npm install
 
-Example: 
+3. **.env file** 
+
 NODE_ENV=development
 PORT=4500
 DATABASE_URL=your_mongodb_connection_string
 
-4. Run the server  
-`npm run dev`
+4. **Run Server** 
+npm run dev
 
-
-##API:
-GET /api/books
-List books 
+**API Endpoints**
+ Books:
+ GET /api/books
+Retrieve a list of all books.
 
 GET /api/books/:bookId
-Get a book by ID.
+Retrieve details of a book by its ID.
 
 PUT /api/books/:bookId
-Update a book.
-
+Update a book by its ID.
 
 DELETE /api/books/:bookId
-Delete a book.
+Delete a book by its ID.
 
-Borrow
+Borrow: 
+
 POST /api/borrow
-Borrow books.
-
+Borrow books by specifying the book ID, quantity, and due date.
 
 GET /api/borrow
-Get summary of borrowed books.
+Get a summary of borrowed books.
