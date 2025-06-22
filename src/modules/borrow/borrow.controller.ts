@@ -9,20 +9,20 @@ const borrowBook = async (req: Request, res: Response): Promise<void> => {
    
     const book = await Book.findById(bookId);
     if (!book) {
-       res.send({
-        success: false,
-        message: "Book not found",
-        error: "Invalid book ID",
-      });
+       res.status(404).json({
+  success: false,
+  message: "Book not found",
+  error: "Invalid book ID",
+});
       return;
     }
 
     if (book.copies < quantity) {
-      res.send({
-        success: false,
-        message: "Not enough copies available",
-        error: `Only ${book.copies} copies left`,
-      });
+     res.status(400).json({
+  success: false,
+  message: "Not enough copies available",
+  error: `Only ${book.copies} copies left`,
+});
     }
 
     book.copies -= quantity;
@@ -89,11 +89,11 @@ const getBorrowedBooks = async (req: Request, res: Response) => {
       data,
     });
   } catch (error) {
-    res.send({
-      success: false,
-      message: "Failed to get borrowed books summary",
-      error,
-    });
+    res.status(500).json({
+  success: false,
+  message: "Failed to get borrowed books summary",
+  error,
+});
   }
 };
 
