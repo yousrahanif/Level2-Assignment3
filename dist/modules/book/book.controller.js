@@ -39,7 +39,7 @@ const getAllBooks = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const filter = req.query.filter;
         const sortBy = req.query.sortBy || "createdAt";
         const sort = req.query.sort === "desc" ? -1 : 1;
-        const limit = parseInt(req.query.limit) || 10;
+        const limit = parseInt(req.query.limit) || 100;
         const query = {};
         if (filter) {
             query.genre = filter;
