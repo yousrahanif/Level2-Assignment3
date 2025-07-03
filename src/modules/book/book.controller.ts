@@ -29,7 +29,7 @@ const getAllBooks=async(req:Request,res:Response)=>{
     const filter=req.query.filter;
     const sortBy = req.query.sortBy || "createdAt";
     const sort = req.query.sort === "desc" ? -1 : 1;
-    const limit = parseInt(req.query.limit as string) || 10;
+    const limit = parseInt(req.query.limit as string) || 100;
 
     const query: any={}
     if(filter){
